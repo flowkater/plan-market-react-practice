@@ -17,7 +17,7 @@ function plan_templates(state = initialState, action) {
     case types.ADD_PLAN_TEMPLATE:
       return plan_templates.push(Map(action.plan_template))
     default:
-      break;
+      return state
   }
 }
 

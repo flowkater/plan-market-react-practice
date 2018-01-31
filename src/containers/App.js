@@ -23,8 +23,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
+const mapStateToProps = (state, ownProps) => {
   return {
     plan_templates: state.get('plan_templates').toJS()
   }
