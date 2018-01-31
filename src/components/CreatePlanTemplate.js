@@ -22,6 +22,7 @@ class CreatePlanTemplate extends Component {
     e.preventDefault();
     console.log(this.state.name)
     console.log(this.state.description)
+    this.props.onAdd({name: this.state.name, description: this.state.description})
   }
 
   render() {

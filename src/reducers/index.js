@@ -1,5 +1,5 @@
 import * as types from '../actions/ActionTypes'
-import { fromJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
 
 const initialState = fromJS({
   plan_templates: [
@@ -11,11 +11,12 @@ const initialState = fromJS({
 });
 
 function plan_templates(state = initialState, action) {
-  const { plan_templates } = state
+  const plan_templates = state.get('plan_templates')
 
   switch (action.type) {
     case types.ADD_PLAN_TEMPLATE:
-      return plan_templates.push(Map(action.plan_template))
+      return state.set('plan_templates', 
+                        plan_templates.push(Map(action.plan_template)));
     default:
       return state
   }
