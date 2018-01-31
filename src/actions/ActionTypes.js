@@ -1,0 +1,1 @@
+export const ADD_PLAN_TEMPLATE = 'ADD_PLAN_TEMPLATE';
