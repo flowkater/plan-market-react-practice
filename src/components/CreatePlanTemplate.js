@@ -27,22 +27,26 @@ class CreatePlanTemplate extends Component {
 
   render() {
     return (
-      <div>
-        <h3>샘플 계획 생성</h3>
+      <div className="input-field">
+        <h3>추천계획 만들기</h3>
         <input 
           name="name"
-          placeholder="이름"
+          placeholder="추천계획명"
           onChange={this.handleChange}
          />
         <br />
-        <input 
+        <textarea 
+          className="materialize-textarea"
           name="description"
           placeholder="설명"
           onChange={this.handleChange}
         />
         <button 
+          className="btn waves-effect waves-light"
           onClick={this.handleClick}
-          name="submit">추가</button>
+          name="submit">
+          추가
+        </button>
       </div>
     );
   }

@@ -4,11 +4,14 @@ class ShowPlanTemplate extends Component {
     render() {
         return (
             <div>
-                <h3>Show PlanTemplate</h3>
-                <ul>
-                    <li>Name: {this.props.planTemplate.name}</li>
-                    <li>Description: {this.props.planTemplate.description}</li>
-                </ul>
+                <h5>{this.props.planTemplate.name}</h5>
+                <div>
+                    {
+                        this.props.planTemplate.description.split('\n').map((item, key) => {
+                            return <span key={key}>{item}<br/></span>
+                            })
+                    }
+                </div>
             </div>
         );
     }

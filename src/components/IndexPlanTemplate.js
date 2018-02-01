@@ -19,10 +19,11 @@ class IndexPlanTemplate extends Component {
 
     return (
       <div>
-        <h3>Index Plan Template</h3>
-        <ul>
-          {mapToComponents}
-        </ul>
+        <table className="striped highlight bordered cursor">
+          <tbody>
+            {mapToComponents}
+            </tbody>
+        </table>
       </div>
     );
   }

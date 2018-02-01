@@ -15,9 +15,13 @@ class IndexPlanTemplateItem extends Component {
 
     render() {
         return (
-            <li onClick={this.handleClick}>
-                {this.props.planTemplate.name} {this.props.planTemplate.description}
-            </li>
+            <tr onClick={this.handleClick}>
+                <td>
+                <b>{this.props.planTemplate.name}</b>
+                <br />
+                {this.props.planTemplate.description.substring(0, 20)} ...
+                </td>
+            </tr>
         );
     }
 }
