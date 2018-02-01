@@ -6,11 +6,11 @@
   - [x] PlanTemplate 생성 create
   - [x] PlanTemplate 리스트 index
   - [x] PlanTemplate 보기 show
-- [] redux
-  - actions
-    - ADD_PlanTemplate
-- [] redux-saga 적용
-- [] API 연결
-  - [] create
-  - [] index
+- [x] redux 적용
+- [x] redux-saga 적용
+- [x] API 연결
+  - [x] create
+  - [x] index
   - [] show
+- [] 네이밍 컨벤션
+  - [] 상수명
