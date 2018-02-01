@@ -13,10 +13,12 @@ class App extends Component {
           onAdd={this.props.addPlanTemplate}
          />
         <IndexPlanTemplate 
-          plan_templates={this.props.plan_templates}
+          planTemplates={this.props.planTemplates}
+          onSelect={this.props.setPlanTemplate}
+          getPlanTemplateList={this.props.getPlanTemplateList}
         />
         <ShowPlanTemplate 
-          
+            planTemplate={this.props.selectedPlanTemplate}
         />
       </div>
     );
@@ -25,12 +27,16 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    plan_templates: state.get('plan_templates').toJS()
+    planTemplates: state.get('planTemplates').toJS(),
+    selectedId: state.get('selectedId'),
+    selectedPlanTemplate: state.get('selectedPlanTemplate').toJS()
   }
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addPlanTemplate: (plan_template) => dispatch(actions.addPlanTemplate(plan_template))
+  addPlanTemplate: (plan_template) => dispatch(actions.addPlanTemplate(plan_template)),
+  setPlanTemplate: (id) => dispatch(actions.setPlanTemplate(id)),
+  getPlanTemplateList: () => dispatch(actions.getPlanTemplateList())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

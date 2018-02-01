@@ -3,14 +3,18 @@ import { IndexPlanTemplateItem } from '.';
 
 class IndexPlanTemplate extends Component {
 
+  componentDidMount() {
+      this.props.getPlanTemplateList()
+  }
+
   render() {
-    const mapToComponents = this.props.plan_templates.map((plan_template, i) => (
-                              <IndexPlanTemplateItem
-                                  name={plan_template.name}
-                                  description={plan_template.description}
-                                  key={i}
-                                />
-                              )
+    const mapToComponents = this.props.planTemplates.map((planTemplate, i) => (
+        <IndexPlanTemplateItem
+            planTemplate={planTemplate}
+            onSelect={this.props.onSelect}
+            key={i}
+        />
+        )
     );
 
     return (
