@@ -33,5 +33,3 @@ export const successGetPlanTemplateList = (plan_templates) => {
         plan_templates: plan_templates
     }
 }
-
-
