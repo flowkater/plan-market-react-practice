@@ -10,19 +10,23 @@ class App extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col s6 offset-s3">
-            <CreatePlanTemplate
-                  onAdd={this.props.addPlanTemplate}
-                />
-          </div>
-        </div>
-        <div className="row">
           <div className="col s4">
-            <IndexPlanTemplate 
-              planTemplates={this.props.planTemplates}
-              onSelect={this.props.setPlanTemplate}
-              getPlanTemplateList={this.props.getPlanTemplateList}
-            />
+            <div className="row">
+              <div className="col s12">
+                <CreatePlanTemplate
+                      onAdd={this.props.addPlanTemplate}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col s12">
+                <IndexPlanTemplate 
+                  planTemplates={this.props.planTemplates}
+                  onSelect={this.props.setPlanTemplate}
+                  getPlanTemplateList={this.props.getPlanTemplateList}
+                />
+              </div>
+            </div>
           </div>
           <div className="col s8">
             <ShowPlanTemplate 
