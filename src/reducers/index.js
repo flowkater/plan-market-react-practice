@@ -1,5 +1,5 @@
 import * as types from '../actions/ActionTypes'
-import { List, Map, fromJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
 
 const initialState = fromJS({
     status: 'init',
