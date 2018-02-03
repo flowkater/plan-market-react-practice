@@ -9,7 +9,6 @@ class IndexPlanTemplateItem extends Component {
 
     handleClick() {
         this.props.onSelect(this.props.planTemplate.id);
-        console.log(this.props.planTemplate.id);
     }
     
 
