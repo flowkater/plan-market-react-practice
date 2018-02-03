@@ -11,6 +11,6 @@
 - [x] API 연결
   - [x] create
   - [x] index
-  - [] show
+  - [x] show
 - [] 네이밍 컨벤션
   - [] 상수명
