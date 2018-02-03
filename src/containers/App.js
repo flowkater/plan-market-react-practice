@@ -5,10 +5,18 @@ import * as actions from '../actions';
 
 class App extends Component {
   render() {
-    console.log(this.props);
+    var button;
+    if (this.props.status == 'waiting') {
+      button = <span>Loading...</span>;
+    } else {
+      button = <span>Ok</span>;
+    }
 
     return (
       <div>
+        <div className="row">
+          { button }
+        </div>
         <div className="row">
           <div className="col s4">
             <div className="row">
@@ -41,6 +49,7 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    status: state.get('status'),
     planTemplates: state.get('planTemplates').toJS(),
     selectedId: state.get('selectedId'),
     selectedPlanTemplate: state.get('selectedPlanTemplate').toJS()
