@@ -17,6 +17,9 @@ function* getPlanTemplateListSaga(action) {
 function* postPlanTemplateSaga(action) {
     try {
         const payload = yield call(api.postPlanTemplate, action.plan_template);
+        if(payload.data.plan_template) {
+            yield put(actions.successPostPlanTemplate(payload.data.plan_template))
+        }
     } catch (e) {
         console.log(e);
     }

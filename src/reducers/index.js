@@ -13,8 +13,7 @@ function planTemplates(state = initialState, action) {
 
     switch (action.type) {
     case types.ADD_PLAN_TEMPLATE:
-        return state.set('planTemplates', 
-                            planTemplates.push(Map(action.plan_template)));
+        return state
     case types.SET_PLAN_TEMPLATE:
         return state.set('selectedId', action.id)
                     .set('selectedPlanTemplate', planTemplates.find((pt) => pt.get('id') === action.id));
@@ -24,6 +23,9 @@ function planTemplates(state = initialState, action) {
     case types.SUCCESS_GET_PLAN_TEMPLATE_LIST:
         return state.set('status', 'success')
                     .set('planTemplates', fromJS(action.plan_templates))
+    case types.SUCESS_POST_PLAN_TEMPLATE:
+        return state.set('planTemplates', 
+            planTemplates.push(Map(action.plan_template)));
     default:
         return state
     }
